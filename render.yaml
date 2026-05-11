@@ -1,0 +1,10 @@
+﻿services:
+  - type: web
+    name: sanos-salvos-api-notifications
+    runtime: docker
+    plan: free
+    branch: main
+    healthCheckPath: /api/notifications/unread-count
+    envVars:
+      - key: RABBITMQ_URL
+        sync: false
